@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { auth, loginWithGoogle, logout } from "./firebase";
+import img from './assets/google-408194_1280.png'
 import "bootstrap/dist/css/bootstrap.min.css";
 export default function App() {
   const [user, setUser] = useState(null);
@@ -13,10 +14,11 @@ export default function App() {
     return () => unsubscribe();
   }, []);
   return (
-    <div className="container d-flex flex-column justify-content-center align-items-center vh-100">
-      <h1 className="mb-4">React + Firebase Google Login</h1>
+    <div className="container d-flex flex-column justify-content-center align-items-center vh-100 ">
+      <img style={{width:'300px'}} className="img-thumbnail shadow-lg mb-4" src={img} alt="" />
+     
       {!user ? (
-        <button className="btn btn-primary btn-lg" onClick={loginWithGoogle}>
+        <button className="btn btn-primary btn-lg mt-4 shadow-lg fw-bold rounded btn-hover" onClick={loginWithGoogle}>
           Login with Google
         </button>
       ) : (
